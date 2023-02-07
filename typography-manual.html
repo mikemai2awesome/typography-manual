@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Typography Manual by Mike Mai</title>
+  <meta name="description" content="A set of rules that will improve your typography 10x.">
+  <link rel="canonical" href="https://mikemai.net/typography-manual">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@mikemai2awesome">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mikemai.net/typography-manual">
+  <meta property="twitter:url" content="https://mikemai.net/typography-manual">
+  <meta name="twitter:title" property="og:title" content="Typography Manual by Mike Mai">
+  <meta name="twitter:image" content="https://s3.amazonaws.com/mikemai/2017/img-profile.jpg">
+  <meta property="og:image" content="https://s3.amazonaws.com/mikemai/2017/img-profile.jpg">
+  <meta name="twitter:description" property="og:description" content="A set of rules that will improve your typography 10x.">
+  <link rel="me" href="https://github.com/mikemai2awesome">
+  <link rel="me" href="https://twitter.com/mikemai2awesome">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/touch-icon-ipad-retina.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://s3.amazonaws.com/mikemai/assets/img/ios/h/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://s3.amazonaws.com/mikemai/assets/img/ios/m/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/mikemai/assets/img/ios/l/apple-touch-icon-precomposed.png">
+  <link rel="icon" href="https://s3.amazonaws.com/mikemai/assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;900&amp;display=swap" rel="stylesheet">
+  <style>
+    @charset "UTF-8";
+    :root {
+      --gutter: clamp(1ch, 2.5vmax, 3ch);
+      --stack: clamp(1.25ex, 2.5vmax, 1.75ex);
+      --line-length: 70ch;
+      --page-padding-inline: calc(
+        (100vw - min(90rem, 100vw - var(--gutter) * 3)) / 2
+      );
+      --section-spacing: clamp(var(--stack) * 4, 10vmax, var(--stack) * 6);
+      --pt-double-canon: 4.666rem;
+      --pt-canon: 3.999rem;
+      --pt-double-great-primer: 2.999rem;
+      --pt-double-english: 2.333rem;
+      --pt-double-pica: 2rem;
+      --pt-paragon: 1.666rem;
+      --pt-great-primer: 1.5rem;
+      --pt-english: 1.166rem;
+      --pt-pica: 1rem;
+      --pt-small-pica: 0.916rem;
+      --pt-long-primer: 0.833rem;
+      --pt-bourgeois: 0.75rem;
+      --pt-chu: 3.499rem;
+      --pt-xiaochu: 2.999rem;
+      --pt-yi: 2.166rem;
+      --pt-xiaoyi: 1.999rem;
+      --pt-er: 1.833rem;
+      --pt-xiaoer: 1.5rem;
+      --pt-san: 1.333rem;
+      --pt-xiaosan: 1.25rem;
+      --pt-si: 1.166rem;
+      --pt-xiaosi: 1rem;
+      --pt-wu: 0.875rem;
+      --pt-xiaowu: 0.75rem;
+      font-family: "Archivo", system-ui, sans-serif;
+      font-size: clamp(100%, 90% + 0.5vw, 150%);
+      font-weight: 300;
+      line-height: 1.4;
+      color-scheme: dark light;
+    }
+
+    *,
+    *::before,
+    *::after {
+      font-feature-settings: "kern";
+      -webkit-font-kerning: normal;
+              font-kerning: normal;
+      -moz-osx-font-smoothing: grayscale !important;
+      -webkit-font-smoothing: antialiased !important;
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: grid;
+      gap: var(--section-spacing);
+      padding-inline: var(--page-padding-inline);
+    }
+
+    header {
+      display: grid;
+      align-content: end;
+      min-block-size: 100vh;
+      min-block-size: 100dvb;
+      padding-block: var(--section-spacing);
+    }
+
+    footer {
+      margin-block: var(--section-spacing);
+      -webkit-padding-start: var(--gutter);
+              padding-inline-start: var(--gutter);
+      -webkit-border-start: 6px double;
+              border-inline-start: 6px double;
+    }
+
+    a {
+      font-weight: 600;
+      color: currentcolor;
+      text-underline-offset: 0.2ex;
+    }
+
+    em {
+      font-family: "Georgia", serif;
+    }
+
+    h1,
+    h2 {
+      font-weight: 900;
+    }
+
+    h1 {
+      display: grid;
+      gap: 0.2ex;
+      align-content: center;
+      font-size: clamp( var(--pt-paragon), var(--pt-pica) + 4.125vw, var(--pt-double-canon) );
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    h1 small {
+      font-size: var(--pt-bourgeois);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-indent: 0.1ch;
+    }
+
+    h1 span {
+      text-indent: -0.225ch;
+    }
+
+    article {
+      counter-reset: section;
+    }
+
+    h2 {
+      display: grid;
+      gap: 0.25ex;
+      position: relative;
+      -webkit-margin-before: var(--section-spacing);
+              margin-block-start: var(--section-spacing);
+      font-size: clamp( var(--pt-great-primer), var(--pt-small-pica) + 4.125vw, var(--pt-double-great-primer) );
+      line-height: 1.2;
+    }
+
+    h2::before,
+    h2::after {
+      font-size: var(--pt-long-primer);
+      line-height: 1;
+    }
+
+    h2::before {
+      content: "№" counter(section);
+      counter-increment: section;
+      justify-self: start;
+      padding: 0.5ex;
+      font-weight: 600;
+      border: 6px double;
+      border-radius: 1px;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      transform: translate3d(-100%, calc(3px + 0.5ex + 0.5em), 0);
+      inline-size: var(--page-padding-inline);
+      -webkit-border-after: 2px solid;
+              border-block-end: 2px solid;
+    }
+
+    h2 q {
+      position: relative;
+    }
+
+    h2 q::before {
+      position: absolute;
+      transform: translatex(-100%);
+    }
+
+    h2 + p {
+      -webkit-margin-before: calc(var(--stack) * 0.5);
+              margin-block-start: calc(var(--stack) * 0.5);
+    }
+
+    p,
+    ul {
+      max-inline-size: var(--line-length);
+      -webkit-margin-before: var(--stack);
+              margin-block-start: var(--stack);
+    }
+
+    p:first-child {
+      -webkit-margin-before: 0;
+              margin-block-start: 0;
+    }
+
+    figure,
+    table {
+      -webkit-margin-before: calc(var(--section-spacing) * 0.5);
+              margin-block-start: calc(var(--section-spacing) * 0.5);
+    }
+
+    figure {
+      position: relative;
+      inset-inline-start: 50%;
+      inset-inline-end: 50%;
+      inline-size: 100%;
+      inline-size: 100vw;
+      -webkit-margin-start: -50vw;
+              margin-inline-start: -50vw;
+      -webkit-margin-end: -50vw;
+              margin-inline-end: -50vw;
+      padding-inline: var(--page-padding-inline);
+      -webkit-padding-after: 1ex;
+              padding-block-end: 1ex;
+      overflow: auto;
+      scrollbar-gutter: stable;
+    }
+
+    table {
+      inline-size: 100%;
+      max-inline-size: var(--line-length);
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid;
+    }
+
+    th,
+    td {
+      padding: 0.5ex;
+      text-align: start;
+    }
+
+    th {
+      padding-block: 1ex;
+      font-weight: 600;
+      font-size: var(--pt-bourgeois);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    caption {
+      -webkit-margin-after: calc(var(--stack) * 0.5);
+              margin-block-end: calc(var(--stack) * 0.5);
+      font-size: var(--pt-english);
+      font-weight: 900;
+      text-align: start;
+    }
+
+    [class^=pt-] {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      block-size: 1.5em;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    [class^=pt-]::before {
+      display: grid;
+      place-items: center;
+      min-block-size: 50%;
+      -webkit-padding-end: 0.5rem;
+              padding-inline-end: 0.5rem;
+      font-size: var(--pt-bourgeois);
+      font-weight: 600;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+      word-break: break-all;
+      -webkit-border-end: 6px double;
+              border-inline-end: 6px double;
+    }
+
+    [class^=pt-] + [class^=pt-] {
+      -webkit-margin-before: 2vmax;
+              margin-block-start: 2vmax;
+    }
+
+    .pt-double-canon {
+      font-size: var(--pt-double-canon);
+    }
+    .pt-double-canon::before {
+      content: "56";
+    }
+
+    .pt-canon {
+      font-size: var(--pt-canon);
+    }
+    .pt-canon::before {
+      content: "48";
+    }
+
+    .pt-double-great-primer {
+      font-size: var(--pt-double-great-primer);
+    }
+    .pt-double-great-primer::before {
+      content: "36";
+    }
+
+    .pt-double-english {
+      font-size: var(--pt-double-english);
+    }
+    .pt-double-english::before {
+      content: "28";
+    }
+
+    .pt-double-pica {
+      font-size: var(--pt-double-pica);
+    }
+    .pt-double-pica::before {
+      content: "24";
+    }
+
+    .pt-paragon {
+      font-size: var(--pt-paragon);
+    }
+    .pt-paragon::before {
+      content: "20";
+    }
+
+    .pt-great-primer {
+      font-size: var(--pt-great-primer);
+    }
+    .pt-great-primer::before {
+      content: "18";
+    }
+
+    .pt-english {
+      font-size: var(--pt-english);
+    }
+    .pt-english::before {
+      content: "14";
+    }
+
+    .pt-pica {
+      font-size: var(--pt-pica);
+    }
+    .pt-pica::before {
+      content: "12";
+    }
+
+    .pt-small-pica {
+      font-size: var(--pt-small-pica);
+    }
+    .pt-small-pica::before {
+      content: "11";
+    }
+
+    .pt-long-primer {
+      font-size: var(--pt-long-primer);
+    }
+    .pt-long-primer::before {
+      content: "10";
+    }
+
+    .pt-bourgeois {
+      font-size: var(--pt-bourgeois);
+    }
+    .pt-bourgeois::before {
+      content: "09";
+    }
+
+    .pt-chu {
+      font-size: var(--pt-chu);
+    }
+    .pt-chu::before {
+      content: "42";
+    }
+
+    .pt-xiaochu {
+      font-size: var(--pt-xiaochu);
+    }
+    .pt-xiaochu::before {
+      content: "36";
+    }
+
+    .pt-yi {
+      font-size: var(--pt-yi);
+    }
+    .pt-yi::before {
+      content: "26";
+    }
+
+    .pt-xiaoyi {
+      font-size: var(--pt-xiaoyi);
+    }
+    .pt-xiaoyi::before {
+      content: "24";
+    }
+
+    .pt-er {
+      font-size: var(--pt-er);
+    }
+    .pt-er::before {
+      content: "22";
+    }
+
+    .pt-xiaoer {
+      font-size: var(--pt-xiaoer);
+    }
+    .pt-xiaoer::before {
+      content: "18";
+    }
+
+    .pt-san {
+      font-size: var(--pt-san);
+    }
+    .pt-san::before {
+      content: "16";
+    }
+
+    .pt-xiaosan {
+      font-size: var(--pt-xiaosan);
+    }
+    .pt-xiaosan::before {
+      content: "15";
+    }
+
+    .pt-si {
+      font-size: var(--pt-si);
+    }
+    .pt-si::before {
+      content: "14";
+    }
+
+    .pt-xiaosi {
+      font-size: var(--pt-xiaosi);
+    }
+    .pt-xiaosi::before {
+      content: "12";
+    }
+
+    .pt-wu {
+      font-size: var(--pt-wu);
+    }
+    .pt-wu::before {
+      content: "10.5";
+    }
+
+    .pt-xiaowu {
+      font-size: var(--pt-xiaowu);
+    }
+    .pt-xiaowu::before {
+      content: "9";
+    }
+
+    [lang=zh-Hans] {
+      font-family: system-ui, sans-serif;
+    }
+
+    table [lang=zh-Hans] {
+      font-weight: 600;
+    }
+
+    figure div[lang=zh-Hans] {
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+    }
+    figure div[lang=zh-Hans] [class^=pt-] {
+      font-weight: 900;
+      letter-spacing: 0.25em;
+    }
+    figure div[lang=zh-Hans] [class^=pt-]::before {
+      min-block-size: 100%;
+      font-size: var(--pt-xiaowu);
+    }
+    </style>
+</head>
+  
+<body>
+  <header aria-label="Masthead">
+    <h1>
+      <small>Mike Mai&rsquo;s</small>
+      <span>Typography<br>Manual</span>
+    </h1>
+  </header>
+  <main>
+    <article>
+      <h2>Use One Font</h2>
+      <p>Believe it or not, you can do a lot with just a single font. Choose a well designed font and explore all of its weights, this works best with <a href="https://fonts.google.com/?vfonly=true">variable fonts</a>. If a font you like does not have multiple weights, you could utilize colors to <a href="https://mikemai.net/typesettings/showcase-im-fell-english.html">create contrast</a> between headings and body&nbsp;text.</p>
+      <p>This manual is set in Archivo 300, 600, and&nbsp;900.</p>
+      <h2>Use Traditional Point&nbsp;Sizes</h2>
+      <p>You can&rsquo;t learn typography overnight. As a beginner, it could feel daunting to set up a type scale. If you are at a loss, it would be safe to utilize the set of traditional point&nbsp;sizes.</p>
+      <p>Remember to convert the point value to <q>rem</q> when designing for the&nbsp;web.</p>
+      <figure>
+        <p class="pt-double-canon">Double Canon</p>
+        <p class="pt-canon">Canon</p>
+        <p class="pt-double-great-primer">Double Great Primer</p>
+        <p class="pt-double-english">Double English</p>
+        <p class="pt-double-pica">Double Pica</p>
+        <p class="pt-paragon">Paragon</p>
+        <p class="pt-english">English</p>
+        <p class="pt-pica">Pica</p>
+        <p class="pt-small-pica">Small Pica</p>
+        <p class="pt-bourgeois">Bourgeois</p>
+      </figure>
+      <table>
+        <caption>
+          Type Scale with Traditional Point&nbsp;Sizes
+        </caption>
+        <thead>
+          <tr>
+            <th>Text Style</th>
+            <th>Point Size</th>
+            <th>Rem Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Display</td>
+            <td>Double Canon</td>
+            <td>4.666</td>
+          </tr>
+          <tr>
+            <td>Heading 1</td>
+            <td>Canon</td>
+            <td>3.999</td>
+          </tr>
+          <tr>
+            <td>Heading 2</td>
+            <td>Double Great Primer</td>
+            <td>2.999</td>
+          </tr>
+          <tr>
+            <td>Heading 3</td>
+            <td>Double English</td>
+            <td>2.333</td>
+          </tr>
+          <tr>
+            <td>Heading 4</td>
+            <td>Double Pica</td>
+            <td>2.000</td>
+          </tr>
+          <tr>
+            <td>Heading 5</td>
+            <td>Paragon</td>
+            <td>1.666</td>
+          </tr>
+          <tr>
+            <td>Heading 6</td>
+            <td>English</td>
+            <td>1.166</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>Pica</td>
+            <td>1.000</td>
+          </tr>
+          <tr>
+            <td>Fine Print 1</td>
+            <td>Small Pica</td>
+            <td>0.916</td>
+          </tr>
+          <tr>
+            <td>Fine Print 2</td>
+            <td>Bourgeois</td>
+            <td>0.750</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Redefine Point Sizes for CJK&nbsp;Characters</h2>
+      <p>CJK characters are wildly different than Latin characters. Make sure to pick point sizes that would look good with CJK&nbsp;characters.</p>
+      <figure>
+        <div lang="zh-Hans">
+          <p class="pt-chu">初号</p>
+          <p class="pt-xiaochu">小初号</p>
+          <p class="pt-yi">一号</p>
+          <p class="pt-er">二号</p>
+          <p class="pt-xiaoer">小二号</p>
+          <p class="pt-san">三号</p>
+          <p class="pt-si">四号</p>
+          <p class="pt-xiaosi">小四号</p>
+          <p class="pt-wu">五号</p>
+          <p class="pt-xiaowu">小五号</p>
+        </div>
+      </figure>
+      <table>
+        <caption>
+          Type Scale with CJK Point&nbsp;Sizes
+        </caption>
+        <thead>
+          <tr>
+            <th>Text Style</th>
+            <th>Point Size</th>
+            <th>Rem Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Display</td>
+            <td lang="zh-Hans">初号</td>
+            <td>3.499</td>
+          </tr>
+          <tr>
+            <td>Heading 1</td>
+            <td lang="zh-Hans">小初号</td>
+            <td>2.999</td>
+          </tr>
+          <tr>
+            <td>Heading 2</td>
+            <td lang="zh-Hans">一号</td>
+            <td>2.166</td>
+          </tr>
+          <tr>
+            <td>Heading 3</td>
+            <td lang="zh-Hans">二号</td>
+            <td>1.833</td>
+          </tr>
+          <tr>
+            <td>Heading 4</td>
+            <td lang="zh-Hans">小二号</td>
+            <td>1.500</td>
+          </tr>
+          <tr>
+            <td>Heading 5</td>
+            <td lang="zh-Hans">三号</td>
+            <td>1.333</td>
+          </tr>
+          <tr>
+            <td>Heading 6</td>
+            <td lang="zh-Hans">四号</td>
+            <td>1.166</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td lang="zh-Hans">小四号</td>
+            <td>1.000</td>
+          </tr>
+          <tr>
+            <td>Fine Print 1</td>
+            <td lang="zh-Hans">五号</td>
+            <td>0.875</td>
+          </tr>
+          <tr>
+            <td>Fine Print 2</td>
+            <td lang="zh-Hans">小五号</td>
+            <td>0.750</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Use Serif for Italic&nbsp;Text</h2>
+      <p>Chances are that italic sans-serif is ugly. Why? Because the style is not available for certain sans-serif fonts and you end up with forced italics. Even if it is available, it is usually poorly designed. Inspect carefully when using italic sans-serif, or substitute a serif font for italic text&mdash;<em>it&rsquo;s worth it, trust&nbsp;me</em>.</p>
+      <h2>Use En Dash &amp; Em&nbsp;Dash</h2>
+      <p>Did you know dashes have different&nbsp;widths?</p>
+      <p>The em dash&mdash;the long dash&mdash;is for indicating a break in the sentence. The en dash is slightly wider than the hyphen and narrower than the em dash, and it should be used for span or range of numbers. Hyphen is for hyphen&shy;ation,&nbsp;duh!</p>
+      <h2><q>Hang Quotes &amp; Punctua&shy;tions</q></h2>
+      <ul role="presentation">
+        <li role="presentation">Because</li>
+        <li role="presentation">text</li>
+        <li role="presentation">should</li>
+        <li role="presentation">align</li>
+      </ul>
+      <p>to ensure the flow of&nbsp;reading.</p>
+      <h2>Use One Space after a&nbsp;Period</h2>
+      <p>Unless you are still using a typewriter or you still think your professor was right. Hint, you are not and they were&nbsp;not. Digital typefaces are designed with proper kerning. Let obsolete practices stay in the past.</p>
+      <h2>Reduce Heading Spacing</h2>
+      <p>Humans always look for patterns. When elements are close to each other, we consciously group them as related&nbsp;information.</p>
+      <p>The spacing between a heading and a paragraph should be less than the regular paragraph spacing. If regular paragraph spacing is used instead, the heading would seem too far away from the&nbsp;paragraph.</p>
+      <h2>Use Thin Space</h2>
+      <p>Thin space might be the most underrated HTML entity. It can be used for names like J.&thinsp;K. Simmons. Without spacing, the J and K would seem too close together; with a regular space, they seem too far apart. Insert a thin space and it is just&nbsp;perfect.</p>
+      <p>The HTML code is <mark>&amp;thinsp;</mark>.</p>
+      <h2>Use Paragraph Indent or Paragraph Spacing, Never&nbsp;Both</h2>
+      <p>Do you wear suspenders while you are already wearing a belt? I didn&rsquo;t think&nbsp;so.</p>
+      <h2>Don&rsquo;t Use Helvetica, Inter, &amp;&nbsp;Roboto</h2>
+      <p>You might enjoy eating <a href="https://helveticasux.com">McDonald&rsquo;s</a> but you know that is not healthy for you. Pick a font that is not so ubiquitous,&nbsp;YOLO!</p>
+    </article>
+  </main>
+  <footer aria-label="Colophon">
+    <p>Crafted in HTML &amp; CSS by <a href="https://mikemai.net">Mike Mai</a>. The guidelines in this manual are solely based on his typographic philosophy and visual&nbsp;judgment.</p>
+    <p>Originally released on <a href="https://codepen.io/mikemai2awesome/pen/qBygNwq">Codepen</a>.</p>
+  </footer>
+</body>
+</html>
